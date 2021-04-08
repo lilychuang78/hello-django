@@ -6,8 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Add a to do item</h1>
+    <h1>Add a Todo Item:</h1>
     <form method="POST" action="add">
+        {% csrf_token %}
+        <!--cross-site request forgery token-->
         <div>
             <p>
                 <label for="id_name">Name: </label>
@@ -16,7 +18,7 @@
         </div>
         <div>
             <p>
-                <label for="id_done">Name: </label>
+                <label for="id_done">Done: </label>
                 <input type="checkbox" id="id_done" name="done" />
             </p>
         </div>
